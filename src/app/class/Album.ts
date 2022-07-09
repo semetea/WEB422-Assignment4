@@ -1,7 +1,6 @@
 import { Artist } from "./Artist";
 import { Copyright } from "./Copyright";
 import { Image } from "./Image";
-import { Item } from "./Item";
 import { Track } from "./Track";
 
 export class Album {
@@ -24,11 +23,11 @@ export class Album {
     release_date: string = ""
     release_date_precision: string = ""
     popularity: number = 0
-    tracks: object = {
+    tracks: Track = {
         href: "",
         items: [],
         limit: 0,
         offset: 0,
-        total: 0,
+        total: 0
     }
 }

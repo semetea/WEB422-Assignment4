@@ -17,7 +17,7 @@ export class NewReleasesComponent implements OnInit {
 
   ngOnInit(): void {
     this.releases = data.albums.items
-    console.log(albumData)
+    console.log(this.releases)
   }
 
 }

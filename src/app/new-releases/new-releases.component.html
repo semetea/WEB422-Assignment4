@@ -13,7 +13,9 @@
                 <strong>Tracks: </strong>{{release.total_tracks}}<br /><br />
                 <mat-card-content>
                     <mat-chip-list aria-label="Artist selection">
-                        <mat-chip *ngFor="let artist of release.artists">{{artist.name}}</mat-chip>
+                        <a routerLink="/artist" style="text-decoration:none">
+                            <mat-chip *ngFor="let artist of release.artists">{{artist.name}}</mat-chip>
+                        </a>
                     </mat-chip-list>
                 </mat-card-content>
             </mat-card>

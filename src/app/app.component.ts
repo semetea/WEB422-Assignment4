@@ -1,3 +1,13 @@
+/*********************************************************************************
+* WEB422 – Assignment 04
+* I declare that this assignment is my own work in accordance with Seneca Academic Policy. No part of this
+* assignment has been copied manually or electronically from any other source (including web sites) or
+* distributed to other students.
+*
+* Name: Taewoo Han Student ID: 143064186 Date: 2022-07-07
+*
+********************************************************************************/
+
 import { Component } from '@angular/core';
 
 @Component({

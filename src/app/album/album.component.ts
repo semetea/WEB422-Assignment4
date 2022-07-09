@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Album } from '../class/Album';
 import { Copyright } from '../class/Copyright';
 import { Image } from '../class/Image';
-import { Item } from '../class/Item';
-import { Track } from '../class/Track';
 import albumData from '../data/Album.json';
+import albumData2 from '../data/Albums.json';
+import artistData from '../data/Artist.json';
 
 @Component({
   selector: 'app-album',
@@ -29,15 +29,20 @@ export class AlbumComponent implements OnInit {
     release_date: "",
     release_date_precision: "",
     popularity: 0,
-    tracks: Object
+    tracks: {
+      href: "",
+      items: [],
+      limit: 0,
+      offset: 0,
+      total: 0,
+    }
   };
 
   constructor() { }
 
   ngOnInit(): void {
-    this.album = albumData
-    this.album.tracks = Object.assign(albumData.tracks)
-    console.log(this.album.tracks)
+    this.album = Object.assign(albumData)
+    console.log(albumData2.items.filter((curValue, index, self) => self.findIndex(t => t.name.toUpperCase() === curValue.name.toUpperCase()) === index))
   }
 
 }

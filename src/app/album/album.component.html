@@ -4,13 +4,15 @@
         </div>
         <div class="fxflex">
             <div [style.min-width]="'300px'" [style.margin]="'10px'">
-                <strong>Record Label: </strong>{{album.album_type}}<br />
+                <strong>Record Label: </strong>{{album.label}}<br />
                 <strong>Release Date: </strong>{{album.release_date}}<br /><br />
                 <strong>Tracks:</strong> 22<br />
                 <strong>Popularity: </strong>{{album.popularity}}<br /><br />
 
                 <mat-chip-list aria-label="Artist selection">
-                    <mat-chip *ngFor="let artist of album.artists">{{artist.name}}</mat-chip>
+                    <a routerLink="/artist" style="text-decoration:none">
+                        <mat-chip *ngFor="let artist of album.artists">{{artist.name}}</mat-chip>
+                    </a>
                 </mat-chip-list>
                 <br />
 
@@ -24,11 +26,12 @@
 
 <mat-list>
     <!-- Single "Responsive" Material List Item-->
-    <mat-list-item>
+    <mat-list-item *ngFor="let item of album.tracks.items">
         <mat-icon mat-list-icon>queue_music</mat-icon>
         <div mat-line>
             <mat-card>
                 <mat-card-content>
+                    {{item.track_number}}: {{item.name}} - {{(item.duration_ms / 60000).toFixed(2)}}
                     <!-- NOTE 3.34 was determined by using (duration_ms / 60000).toFixed(2) -->
                 </mat-card-content>
             </mat-card>
